@@ -1,9 +1,113 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Jacky Masagnay Computer Engineering Portfolio"><title>Jacky Masagnay | Portfolio</title><link rel="stylesheet" href="style.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></head><body>
-<header><a class="logo" href="#home"><b>J</b> Jacky Masagnay</a><button id="menu"><i class="fa-solid fa-bars"></i></button><nav id="nav"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav></header>
-<main>
-<section id="home" class="hero"><div><small class="available">● Available for opportunities</small><p class="eyebrow">HELLO, I'M</p><h1>Jacky <span>Masagnay</span></h1><h2>Computer Engineering Student<br><span id="typing"></span></h2><p class="lead">I build software, embedded systems, automation solutions and technology projects that turn engineering ideas into practical applications.</p><div class="actions"><a class="btn primary" href="#projects">View Projects <i class="fa-solid fa-arrow-right"></i></a><a class="btn secondary" href="#contact">Contact Me</a></div><div class="social"><a href="https://github.com/jackymasagnay445-debug" target="_blank"><i class="fa-brands fa-github"></i></a><a href="#contact"><i class="fa-solid fa-envelope"></i></a></div></div><div class="profile"><div class="chip"><i class="fa-solid fa-microchip"></i></div><h3>Engineering + Technology</h3><p>Software • Embedded Systems • IoT • Automation</p></div></section>
-<section id="about" class="section"><div class="heading"><small>ABOUT ME</small><h2>Building Technology With Purpose</h2></div><div class="about"><div><h3>Hello! I'm Jacky.</h3><p>I am a Computer Engineering student interested in software development, embedded systems, IoT, automation, OCR and intelligent technology.</p><p>My projects combine hardware and software to create practical solutions. I enjoy turning concepts into functional prototypes and improving my programming and system-design skills.</p></div><div class="stats"><div><b>5+</b><span>Major Projects</span></div><div><b>IoT</b><span>Embedded Systems</span></div><div><b>OCR</b><span>Application Development</span></div><div><b>AI</b><span>Technology Projects</span></div></div></div></section>
-<section id="skills" class="section dark"><div class="heading"><small>EXPERTISE</small><h2>Skills & Technologies</h2></div><div class="grid skills"><article><i class="fa-solid fa-code"></i><h3>Web Development</h3><p>Responsive interfaces and interactive applications.</p><span>HTML</span><span>CSS</span><span>JavaScript</span></article><article><i class="fa-solid fa-microchip"></i><h3>Embedded Systems</h3><p>Microcontrollers, sensors, hardware integration and automation.</p><span>Arduino</span><span>ESP32</span><span>IoT</span></article><article><i class="fa-solid fa-database"></i><h3>Systems & Database</h3><p>Application architecture, data management and system concepts.</p><span>MySQL</span><span>APIs</span><span>Backend</span></article><article><i class="fa-solid fa-robot"></i><h3>OCR & Intelligent Systems</h3><p>Receipt processing, automation and intelligent-system concepts.</p><span>OCR</span><span>AI</span><span>Automation</span></article></div></section>
-<section id="projects" class="section"><div class="heading"><small>MY WORK</small><h2>Featured Projects</h2></div><div class="grid projects" id="projectGrid"></div></section>
-<section id="contact" class="section"><div class="heading"><small>GET IN TOUCH</small><h2>Let's Build Something</h2></div><div class="contact"><div><h3>Have a project or opportunity?</h3><p>I'm open to discussing software projects, embedded systems, engineering ideas and professional opportunities.</p><p><i class="fa-brands fa-github"></i> github.com/jackymasagnay445-debug</p></div><form id="form"><label>Name<input id="name" required></label><label>Email<input id="email" type="email" required></label><label>Message<textarea id="message" rows="6" required></textarea></label><button class="btn primary" type="submit">Send Message <i class="fa-solid fa-paper-plane"></i></button><p id="formmsg"></p></form></div></section>
-</main><div id="modal" class="modal"><div class="modalbox"><button class="close" onclick="closeProject()">×</button><div id="modalicon" class="project-icon"></div><small id="modalcat"></small><h2 id="modaltitle"></h2><p id="modaldesc"></p><div id="modaltech" class="tags"></div></div></div><footer><b>Jacky Masagnay</b><p>Computer Engineering Student • Developer • Innovator</p><p>© <span id="year"></span> Jacky Masagnay</p></footer><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jacky Masagnay | Portfolio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#f4f7fb;color:#222;line-height:1.6}
+a{text-decoration:none}
+nav{background:#0b3d91;padding:18px 10%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+nav h2{color:#fff;font-size:22px}
+nav ul{list-style:none;display:flex;gap:25px}
+nav ul li a{color:#fff;font-weight:bold;transition:.3s}
+nav ul li a:hover{color:#55d6ff}
+.hero{text-align:center;padding:110px 20px;background:#fff}
+.hero h1{font-size:50px;color:#0b3d91;margin-bottom:10px}
+.hero h3{font-size:25px;color:#555;margin-bottom:20px}
+.hero p{max-width:700px;margin:auto;color:#666;font-size:17px}
+.button{display:inline-block;margin-top:25px;padding:13px 25px;background:#0b3d91;color:#fff;border-radius:6px;font-weight:bold;transition:.3s}
+.button:hover{background:#075dcc;transform:translateY(-2px)}
+section{padding:75px 10%}
+section h2{text-align:center;color:#0b3d91;margin-bottom:35px;font-size:32px}
+.about{max-width:800px;margin:auto;text-align:center}
+.about p{color:#555;font-size:17px}
+.skills{display:flex;justify-content:center;flex-wrap:wrap;gap:15px}
+.skill{background:#fff;padding:15px 25px;border-radius:8px;box-shadow:0 3px 10px rgba(0,0,0,.08);font-weight:bold;color:#0b3d91;transition:.3s}
+.skill:hover{transform:translateY(-4px)}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+.project{background:#fff;padding:25px;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,.08);transition:.3s}
+.project:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.project h3{color:#0b3d91;margin-bottom:10px}
+.project p{color:#666}
+.project-link{display:inline-block;margin-top:15px;color:#0b3d91;font-weight:bold}
+.contact{text-align:center;background:#fff}
+.contact p{margin:12px 0;color:#555}
+.contact a{color:#0b3d91;font-weight:bold}
+.clone-box{max-width:700px;margin:30px auto 0;text-align:left}
+.clone-box h3{color:#0b3d91;margin-bottom:10px}
+pre{background:#111827;color:#fff;padding:18px;border-radius:8px;overflow-x:auto;font-size:14px}
+footer{background:#0b3d91;color:#fff;text-align:center;padding:20px}
+@media(max-width:700px){nav{flex-direction:column;gap:15px;padding:18px 5%}nav ul{gap:12px;flex-wrap:wrap;justify-content:center}nav ul li a{font-size:14px}.hero{padding:80px 20px}.hero h1{font-size:36px}section{padding:60px 6%}}
+@media(max-width:450px){nav h2{font-size:19px}nav ul{gap:8px}nav ul li a{font-size:12px}.hero h1{font-size:30px}.hero h3{font-size:18px}.hero p{font-size:15px}.skill{width:100%;text-align:center}}
+</style>
+</head>
+<body>
+<nav>
+<h2>Jacky Masagnay</h2>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
+<h1>Jacky Masagnay</h1>
+<h3>Computer Engineering Student</h3>
+<p>Welcome to my personal portfolio. I am interested in software development, embedded systems, microcontrollers, automation, IoT, and technology.</p>
+<a href="#projects" class="button">View My Projects</a>
+</section>
+
+<section id="about">
+<h2>About Me</h2>
+<div class="about">
+<p>I am Jacky Masagnay, a Computer Engineering student interested in developing software and hardware-based systems. I enjoy creating applications, working with microcontrollers, and developing technology solutions for real-world problems.</p>
+</div>
+</section>
+
+<section id="skills">
+<h2>My Skills</h2>
+<div class="skills">
+<div class="skill">HTML</div><div class="skill">CSS</div><div class="skill">JavaScript</div>
+<div class="skill">Arduino</div><div class="skill">ESP32</div><div class="skill">Embedded Systems</div>
+<div class="skill">IoT</div><div class="skill">GitHub</div>
+</div>
+</section>
+
+<section id="projects">
+<h2>My Projects</h2>
+<div class="projects">
+<div class="project"><h3>Cardiovascular Monitoring System</h3><p>A microcontroller-based system designed to monitor heart-related information using sensors.</p></div>
+<div class="project"><h3>Ready PH Offline Application</h3><p>An offline application concept designed to provide useful information even without an internet connection.</p></div>
+<div class="project"><h3>Automated Cable Measurement and Cutting</h3><p>An automated machine concept that measures and cuts electrical cables according to the required length.</p></div>
+<div class="project"><h3>ReceiScan OCR</h3><p>A receipt management system that uses OCR technology to extract information from receipts.</p></div>
+<div class="project"><h3>AI Microcontroller Projects</h3><p>Projects combining microcontrollers, sensors, automation, and intelligent system concepts.</p></div>
+<div class="project"><h3>GitHub Portfolio</h3><p>My personal portfolio website hosted using GitHub Pages.</p><a class="project-link" href="https://github.com/jackymasagnay445-debug/Kyy.github.io" target="_blank">View Repository →</a></div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact Me</h2>
+<p>Email: <a href="mailto:jackymasagnay445@gmail.com">jackymasagnay445@gmail.com</a></p>
+<p>GitHub Profile: <a href="https://github.com/jackymasagnay445-debug" target="_blank">github.com/jackymasagnay445-debug</a></p>
+<p>GitHub Repository: <a href="https://github.com/jackymasagnay445-debug/Kyy.github.io" target="_blank">Kyy.github.io</a></p>
+<p>Location: Philippines</p>
+<div class="clone-box">
+<h3>Clone this repository</h3>
+<pre>git clone https://github.com/jackymasagnay445-debug/Kyy.github.io</pre>
+<br>
+<h3>GitHub CLI</h3>
+<pre>gh repo clone jackymasagnay445-debug/Kyy.github.io</pre>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Jacky Masagnay. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
